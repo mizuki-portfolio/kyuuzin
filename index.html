@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人材LP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>○○バイト</h1>
+    <a href="admin.html" class="admin-link">管理者</a>
+  </header>
+  <main>
+    <h2>バイト一覧</h2>
+    <p>応募したい・気になるバイトを選ぼう</p>
+    
+    <!-- 検索フォーム -->
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="バイトの種類で検索（例：コンビニ、レストラン）" class="search-input">
+      </div>
+      <div class="filter-box">
+        <select id="locationFilter" class="filter-select">
+          <option value="">すべての地域</option>
+          <option value="東京都">東京都</option>
+          <option value="神奈川県">神奈川県</option>
+          <option value="埼玉県">埼玉県</option>
+          <option value="千葉県">千葉県</option>
+          <option value="大阪府">大阪府</option>
+        </select>
+        <button id="resetFilter" class="reset-button">リセット</button>
+      </div>
+    </div>
+    
+    <div class="job-cards" id="jobCards">
+      <!-- カードはJavaScriptで動的に生成 -->
+    </div>
+    <div id="noResults" class="no-results" style="display: none;">
+      <p>検索条件に一致するバイトが見つかりませんでした。</p>
+    </div>
+    <!-- ページネーション -->
+    <div id="pagination" class="pagination-container" style="display: none;">
+      <button id="prevPageBtn" class="pagination-btn">前へ</button>
+      <span id="pageInfo" class="page-info"></span>
+      <button id="nextPageBtn" class="pagination-btn">次へ</button>
+    </div>
+  </main>
+  <footer>
+    <a href="privacy.html">個人情報の取り扱いについて</a>
+    <a href="terms.html">利用規約</a>
+    <small>ⓒ○○バイト</small>
+  </footer>
+</body>
+</html>

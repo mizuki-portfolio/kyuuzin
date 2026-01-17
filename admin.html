@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>応募管理 - 人材LP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>○○バイト - 応募管理</h1>
+  </header>
+  <main>
+    <div class="admin-container">
+      <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="applications">応募管理</button>
+        <button class="tab-btn" data-tab="contacted">応募一覧</button>
+        <button class="tab-btn" data-tab="jobs">バイト求人管理</button>
+      </div>
+      
+      <!-- 応募管理タブ（未連絡の応募） -->
+      <div id="applicationsTab" class="tab-content active">
+        <div class="admin-header">
+          <h2>応募管理</h2>
+          <div class="admin-actions">
+            <button id="clearAllBtn" class="clear-button">すべて削除</button>
+            <a href="index.html" class="back-to-top-link">サイトに戻る</a>
+          </div>
+        </div>
+        
+        <div id="applicationsList" class="applications-list">
+          <!-- 未連絡の応募データはJavaScriptで動的に生成 -->
+        </div>
+        
+        <!-- ページネーション -->
+        <div id="applicationsPagination" class="pagination-container" style="display: none;">
+          <button id="prevApplicationsPageBtn" class="pagination-btn">前へ</button>
+          <span id="applicationsPageInfo" class="page-info"></span>
+          <button id="nextApplicationsPageBtn" class="pagination-btn">次へ</button>
+        </div>
+        
+        <div id="noApplications" class="no-applications" style="display: none;">
+          <p>未連絡の応募データがありません</p>
+        </div>
+      </div>
+      
+      <!-- 応募一覧タブ（連絡済みの応募、店舗別） -->
+      <div id="contactedTab" class="tab-content">
+        <div class="admin-header">
+          <h2>応募一覧（連絡済み）</h2>
+          <div class="admin-actions">
+            <a href="index.html" class="back-to-top-link">サイトに戻る</a>
+          </div>
+        </div>
+        
+        <div id="contactedApplicationsList" class="contacted-applications-list">
+          <!-- 連絡済みの応募データはJavaScriptで動的に生成 -->
+        </div>
+        
+        <div id="noContactedApplications" class="no-applications" style="display: none;">
+          <p>連絡済みの応募データがありません</p>
+        </div>
+      </div>
+      
+      <!-- バイト求人管理タブ -->
+      <div id="jobsTab" class="tab-content">
+        <div class="admin-header">
+          <h2>バイト求人一覧</h2>
+          <div class="admin-actions">
+            <button id="addNewJobBtn" class="add-button">新規追加</button>
+            <a href="index.html" class="back-to-top-link">サイトに戻る</a>
+          </div>
+        </div>
+        
+        <!-- 検索フォーム -->
+        <div class="search-container" style="margin-top: 24px; margin-bottom: 24px;">
+          <div class="search-box">
+            <input type="text" id="jobSearchInput" placeholder="キーワードで検索（タイトル、会社名、種類など）" class="search-input">
+          </div>
+        </div>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <span class="stat-label">登録バイト数</span>
+            <span class="stat-value" id="totalJobCount">0</span>
+          </div>
+        </div>
+        
+        <div id="jobsList" class="jobs-list">
+          <!-- バイト求人データはJavaScriptで動的に生成 -->
+        </div>
+        
+        <!-- ページネーション -->
+        <div id="jobsPagination" class="pagination-container" style="display: none;">
+          <button id="prevPageBtn" class="pagination-btn">前へ</button>
+          <span id="pageInfo" class="page-info"></span>
+          <button id="nextPageBtn" class="pagination-btn">次へ</button>
+        </div>
+        
+        <div id="noJobs" class="no-applications" style="display: none;">
+          <p>バイト求人が登録されていません</p>
+        </div>
+        
+        <div id="noJobResults" class="no-applications" style="display: none;">
+          <p>検索条件に一致するバイト求人が見つかりませんでした</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- バイト求人編集モーダル -->
+    <div id="editJobModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalJobTitle">バイト求人を編集</h3>
+          <button class="modal-close" onclick="closeEditJobModal()">×</button>
+        </div>
+        <form id="editJobForm" class="edit-form">
+          <input type="hidden" id="editJobId" name="id">
+          
+          <div class="form-group">
+            <label for="editJobTitleInput">バイトタイトル <span class="required">必須</span></label>
+            <input type="text" id="editJobTitleInput" name="title" required placeholder="例：コンビニ店員">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobType">バイト種類 <span class="required">必須</span></label>
+            <input type="text" id="editJobType" name="type" required placeholder="例：コンビニ">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobSalary">給与 <span class="required">必須</span></label>
+            <input type="text" id="editJobSalary" name="salary" required placeholder="例：時給 1,100円～">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobLocation">勤務地 <span class="required">必須</span></label>
+            <input type="text" id="editJobLocation" name="location" required placeholder="例：東京都渋谷区">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobNearestStation">最寄り駅</label>
+            <input type="text" id="editJobNearestStation" name="nearestStation" placeholder="例：渋谷駅 徒歩5分">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobCompany">会社名 <span class="required">必須</span></label>
+            <input type="text" id="editJobCompany" name="company" required placeholder="例：コンビニエース">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobImage">画像URL</label>
+            <input type="text" id="editJobImage" name="image" placeholder="https://images.unsplash.com/...">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobAppeal">アピールポイント</label>
+            <input type="text" id="editJobAppeal" name="appeal" placeholder="例：未経験OK・シフト自由">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobComment">コメント</label>
+            <textarea id="editJobComment" name="comment" rows="3" placeholder="例：明るいスタッフと一緒に働けます"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobWorkTime">勤務時間</label>
+            <input type="text" id="editJobWorkTime" name="workTime" placeholder="例：9:00～22:00の間でシフト制">
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobDescription">仕事内容</label>
+            <textarea id="editJobDescription" name="description" rows="4" placeholder="仕事の詳細を記入してください"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobRequirements">応募条件</label>
+            <textarea id="editJobRequirements" name="requirements" rows="3" placeholder="例：18歳以上、コミュニケーション能力"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="editJobBenefits">待遇・福利厚生</label>
+            <textarea id="editJobBenefits" name="benefits" rows="3" placeholder="例：社会保険完備、交通費支給"></textarea>
+          </div>
+          
+          <div class="modal-actions">
+            <button type="button" class="cancel-button" onclick="closeEditJobModal()">キャンセル</button>
+            <button type="submit" class="save-button">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <a href="privacy.html">個人情報の取り扱いについて</a>
+    <a href="terms.html">利用規約</a>
+    <small>ⓒ○○バイト</small>
+  </footer>
+</body>
+</html>

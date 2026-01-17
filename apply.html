@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>応募フォーム - 人材LP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="detail.js" defer></script>
+  <script src="apply.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>○○バイト</h1>
+  </header>
+  <main>
+    <div class="apply-container">
+      <a href="javascript:history.back()" class="back-link">← 戻る</a>
+      <h2>応募フォーム</h2>
+      <p class="apply-subtitle">以下のフォームにご記入の上、送信してください</p>
+      
+      <form id="applyForm" class="apply-form">
+        <div class="form-group">
+          <label for="jobTitle">応募バイト</label>
+          <input type="text" id="jobTitle" name="jobTitle" readonly class="readonly-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="companyName">会社名</label>
+          <input type="text" id="companyName" name="companyName" readonly class="readonly-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="name">お名前 <span class="required">必須</span></label>
+          <input type="text" id="name" name="name" required placeholder="山田 太郎" value="山田 太郎">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">メールアドレス <span class="required">必須</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@email.com" value="yamada@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">電話番号 <span class="required">必須</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="090-1234-5678" value="090-1234-5678">
+        </div>
+        
+        <div class="form-group">
+          <label for="availability">希望勤務時間</label>
+          <select id="availability" name="availability">
+            <option value="">選択してください</option>
+            <option value="平日のみ">平日のみ</option>
+            <option value="土日のみ">土日のみ</option>
+            <option value="平日・土日可" selected>平日・土日可</option>
+            <option value="シフト相談">シフト相談</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="experience">経験</label>
+          <select id="experience" name="experience">
+            <option value="">選択してください</option>
+            <option value="未経験" selected>未経験</option>
+            <option value="1年未満">1年未満</option>
+            <option value="1年以上3年未満">1年以上3年未満</option>
+            <option value="3年以上">3年以上</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="pr">自己PR <span class="required">必須</span></label>
+          <textarea id="pr" name="pr" rows="5" required placeholder="自己PRや志望動機をご記入ください">未経験ですが、明るく積極的に取り組みます。コミュニケーション能力を活かして、お客様に喜んでいただけるサービスを提供したいです。シフトにも柔軟に対応できますので、よろしくお願いします。</textarea>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="agree" name="agree" required checked>
+            <span>個人情報の取り扱いに同意します <span class="required">必須</span></span>
+          </label>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="submit-button">応募する</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <a href="privacy.html">個人情報の取り扱いについて</a>
+    <a href="terms.html">利用規約</a>
+    <small>ⓒ○○バイト</small>
+  </footer>
+</body>
+</html>
