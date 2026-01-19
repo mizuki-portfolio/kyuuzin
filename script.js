@@ -490,9 +490,9 @@ function applyCaretColor() {
     
     // setPropertyで!importantを設定（より強力）
     // 複数の方法で確実に適用
-    input.style.setProperty('caret-color', '#007bff', 'important');
-    input.style.setProperty('-webkit-caret-color', '#007bff', 'important'); // WebKit用
-    input.style.caretColor = '#007bff'; // 直接設定も追加
+    input.style.setProperty('caret-color', '#ff6b35', 'important');
+    input.style.setProperty('-webkit-caret-color', '#ff6b35', 'important'); // WebKit用
+    input.style.caretColor = '#ff6b35'; // 直接設定も追加
     
     // フォーカスイベントでも再適用（確実に適用）
     if (!input.hasAttribute('data-caret-focus-listener')) {
@@ -703,17 +703,22 @@ function renderJobs(jobsToRender) {
   jobCardsContainer.innerHTML = jobsToRender.map(job => {
     // 画像URLをエスケープ
     const imageUrl = job.image || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2U5ZWNlZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNmM3NTdkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+44OP44Kk44Or55Sf5rS7PC90ZXh0Pjwvc3ZnPg==';
+    // 未経験OKかどうかを判定（appealに「未経験」が含まれているかチェック）
+    const isNoExperienceOK = job.appeal && (job.appeal.includes('未経験') || job.appeal.includes('初心者') || job.appeal.includes('未経験歓迎'));
     return `
     <div class="job-card" data-job-id="${job.id}">
       <div class="job-image-container">
         <img src="${imageUrl}" alt="${job.title || 'バイト画像'}" class="job-image" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2U5ZWNlZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNmM3NTdkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+44OP44Kk44Or55Sf5rS7PC90ZXh0Pjwvc3ZnPg=='">
+        ${isNoExperienceOK ? '<span class="no-experience-badge">未経験OK</span>' : ''}
       </div>
       <h3 class="job-title">${job.title}</h3>
       <p class="job-company">${job.company}</p>
       <p class="job-type">${job.type}</p>
       <p class="job-appeal">✨ ${job.appeal || '働きやすい環境'}</p>
       <p class="job-comment">${job.comment || '一緒に働きましょう'}</p>
-      <p class="job-salary">${job.salary}</p>
+      <div class="job-salary-container">
+        <p class="job-salary">${job.salary}</p>
+      </div>
       <p class="job-location">${job.location}</p>
       <span class="job-arrow">→</span>
     </div>

@@ -9,9 +9,9 @@ function applyCaretColor() {
     
     // setPropertyで!importantを設定（より強力）
     // 複数の方法で確実に適用
-    input.style.setProperty('caret-color', '#007bff', 'important');
-    input.style.setProperty('-webkit-caret-color', '#007bff', 'important'); // WebKit用
-    input.style.caretColor = '#007bff'; // 直接設定も追加
+    input.style.setProperty('caret-color', '#ff6b35', 'important');
+    input.style.setProperty('-webkit-caret-color', '#ff6b35', 'important'); // WebKit用
+    input.style.caretColor = '#ff6b35'; // 直接設定も追加
     
     // フォーカスイベントでも再適用（確実に適用）
     if (!input.hasAttribute('data-caret-focus-listener')) {
@@ -248,18 +248,18 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       
       // 検索入力欄のカーソル色を確保（より強力な方法）
-      jobSearchInput.style.setProperty('caret-color', '#007bff', 'important');
-      jobSearchInput.style.setProperty('-webkit-caret-color', '#007bff', 'important');
-      jobSearchInput.style.caretColor = '#007bff';
+      jobSearchInput.style.setProperty('caret-color', '#ff6b35', 'important');
+      jobSearchInput.style.setProperty('-webkit-caret-color', '#ff6b35', 'important');
+      jobSearchInput.style.caretColor = '#ff6b35';
       jobSearchInput.style.color = '#2c3e50';
       
       // フォーカスイベントでも再適用
       if (!jobSearchInput.hasAttribute('data-caret-focus-listener')) {
         jobSearchInput.setAttribute('data-caret-focus-listener', 'true');
         const applyColor = function() {
-          this.style.setProperty('caret-color', '#007bff', 'important');
-          this.style.setProperty('-webkit-caret-color', '#007bff', 'important');
-          this.style.caretColor = '#007bff';
+          this.style.setProperty('caret-color', '#ff6b35', 'important');
+          this.style.setProperty('-webkit-caret-color', '#ff6b35', 'important');
+          this.style.caretColor = '#ff6b35';
         };
         jobSearchInput.addEventListener('focus', applyColor, { once: false });
         jobSearchInput.addEventListener('click', applyColor, { once: false });

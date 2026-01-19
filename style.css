@@ -31,16 +31,16 @@ textarea:hover,
 .edit-form input,
 .edit-form textarea,
 .contact-note {
-  caret-color: #007bff !important;
-  -webkit-caret-color: #007bff !important;
-  color: #2c3e50 !important;
+  caret-color: #ff6b35 !important;
+  -webkit-caret-color: #ff6b35 !important;
+  color: #000000 !important;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f0f4f8;
+  color: #000000;
+  background-color: #fff5f0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,10 +48,10 @@ body {
 
 /* ヘッダー */
 header {
-  background-color: #e0f7fa;
+  background-color: #ffe5d9;
   padding: 40px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  border-bottom: 2px solid #b0bec5;
+  border-bottom: 2px solid #ff8c42;
 }
 
 header {
@@ -60,10 +60,10 @@ header {
 
 header h1 {
   font-size: 42px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .admin-link {
@@ -71,17 +71,19 @@ header h1 {
   top: 24px;
   right: 20px;
   font-size: 14px;
-  color: #007bff;
+  color: #ff6b35;
   text-decoration: none;
   padding: 6px 12px;
-  border: 1px solid #007bff;
+  background-color: #ffffff;
+  border: 1px solid #ff6b35;
   border-radius: 4px;
   transition: all 0.3s ease;
+  font-weight: 400;
 }
 
 .admin-link:hover {
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: #fff5f0;
+  color: #ff6b35;
 }
 
 /* メインコンテンツ */
@@ -96,14 +98,14 @@ main {
 main h2 {
   font-size: 32px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 16px;
   text-align: center;
 }
 
 main p {
   font-size: 18px;
-  color: #6c757d;
+  color: #000000;
   text-align: center;
   margin-bottom: 32px;
 }
@@ -116,7 +118,7 @@ main p {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #d0e3f0;
+  border: 2px solid #ffd4c0;
 }
 
 .search-box {
@@ -130,14 +132,14 @@ main p {
   border: 1px solid #ced4da;
   border-radius: 6px;
   transition: border-color 0.3s ease;
-  color: #2c3e50;
-  caret-color: #007bff;
+  color: #000000;
+  caret-color: #ff6b35;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .search-input::placeholder {
@@ -163,8 +165,8 @@ main p {
 
 .filter-select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .reset-button {
@@ -185,7 +187,7 @@ main p {
 .search-button {
   padding: 12px 32px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -196,17 +198,17 @@ main p {
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 .search-button:active {
-  background-color: #004085;
+  background-color: #d44a1f;
 }
 
 .no-results {
   text-align: center;
   padding: 48px 20px;
-  color: #6c757d;
+  color: #000000;
   font-size: 18px;
 }
 
@@ -220,7 +222,7 @@ main p {
 
 .job-card {
   background-color: #ffffff;
-  border: 2px solid #d0e3f0;
+  border: 2px solid #ffd4c0;
   border-radius: 12px;
   padding: 0;
   cursor: pointer;
@@ -235,7 +237,7 @@ main p {
 .job-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: #007bff;
+  border-color: #ff6b35;
 }
 
 .job-image-container {
@@ -243,6 +245,7 @@ main p {
   height: 180px;
   overflow: hidden;
   background-color: #f8f9fa;
+  position: relative;
 }
 
 .job-image {
@@ -271,16 +274,16 @@ main p {
 
 .job-title {
   font-size: 22px;
-  font-weight: 700;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .job-company {
   font-size: 15px;
-  color: #007bff;
-  font-weight: 600;
+  color: #ff6b35;
+  font-weight: 400;
   margin-bottom: 12px;
   padding: 4px 0;
   border-bottom: 1px solid #f1f3f5;
@@ -288,19 +291,19 @@ main p {
 
 .job-type {
   font-size: 13px;
-  color: #6c757d;
+  color: #000000;
   background-color: #f8f9fa;
   padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 12px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .job-appeal {
   font-size: 14px;
-  color: #007bff;
-  font-weight: 600;
+  color: #ff6b35;
+  font-weight: 400;
   margin-bottom: 8px;
   padding: 6px 0;
   border-bottom: 1px solid #f1f3f5;
@@ -308,25 +311,50 @@ main p {
 
 .job-comment {
   font-size: 13px;
-  color: #6c757d;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 12px;
   min-height: 38px;
 }
 
-.job-salary {
-  font-size: 20px;
-  font-weight: 700;
-  color: #28a745;
-  margin-bottom: 12px;
+.job-salary-container {
   margin-top: auto;
-  padding-top: 8px;
-  border-top: 1px solid #f1f3f5;
+  padding-top: 12px;
+  border-top: 2px solid #e9ecef;
+  margin-bottom: 12px;
+}
+
+.job-salary {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #ff6b35;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+  letter-spacing: 0;
+}
+
+.no-experience-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #ffc299;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  box-shadow: 0 2px 6px rgba(255, 194, 153, 0.4);
+  z-index: 10;
+  letter-spacing: 0.3px;
 }
 
 .job-location {
   font-size: 14px;
-  color: #495057;
+  color: #000000;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -343,7 +371,7 @@ main p {
   right: 20px;
   bottom: 20px;
   font-size: 24px;
-  color: #007bff;
+  color: #ff6b35;
   font-weight: bold;
   transition: transform 0.3s ease;
   background-color: rgba(255, 255, 255, 0.9);
@@ -357,15 +385,15 @@ main p {
 
 /* フッター */
 footer {
-  background-color: #e0f7fa;
+  background-color: #ffe5d9;
   padding: 32px 20px;
   text-align: center;
-  border-top: 2px solid #b0bec5;
+  border-top: 2px solid #ff8c42;
   margin-top: auto;
 }
 
 footer a {
-  color: #007bff;
+  color: #000000;
   text-decoration: none;
   margin: 0 16px;
   font-size: 14px;
@@ -373,14 +401,14 @@ footer a {
 }
 
 footer a:hover {
-  color: #0056b3;
+  color: #000000;
   text-decoration: underline;
 }
 
 footer small {
   display: block;
   margin-top: 16px;
-  color: #6c757d;
+  color: #000000;
   font-size: 12px;
 }
 
@@ -402,15 +430,15 @@ footer small {
 
 .policy-container h2 {
   font-size: 32px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   margin-bottom: 12px;
   padding-bottom: 16px;
   border-bottom: 2px solid #e9ecef;
 }
 
 .last-updated {
-  color: #6c757d;
+  color: #000000;
   font-size: 14px;
   margin-bottom: 32px;
 }
@@ -421,8 +449,8 @@ footer small {
 
 .policy-section h3 {
   font-size: 22px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   margin-bottom: 16px;
   padding-top: 24px;
   border-top: 1px solid #e9ecef;
@@ -434,7 +462,7 @@ footer small {
 }
 
 .policy-section p {
-  color: #495057;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 12px;
 }
@@ -445,7 +473,7 @@ footer small {
 }
 
 .policy-section li {
-  color: #495057;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 8px;
 }
@@ -467,7 +495,7 @@ footer small {
 
 .back-link {
   display: inline-block;
-  color: #007bff;
+  color: #ff6b35;
   text-decoration: none;
   margin-bottom: 24px;
   font-size: 14px;
@@ -475,7 +503,7 @@ footer small {
 }
 
 .back-link:hover {
-  color: #0056b3;
+  color: #e55a2b;
   text-decoration: underline;
 }
 
@@ -494,18 +522,31 @@ footer small {
   margin-bottom: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid #e9ecef;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.no-experience-badge-detail {
+  background-color: #ffc299;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0 2px 6px rgba(255, 194, 153, 0.4);
+  letter-spacing: 0.3px;
 }
 
 .detail-header h2 {
   font-size: 28px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   margin: 0;
 }
 
 .detail-type {
   background-color: #f8f9fa;
-  color: #6c757d;
+  color: #000000;
   padding: 4px 12px;
   border-radius: 4px;
   font-size: 14px;
@@ -517,6 +558,7 @@ footer small {
 
 .info-item {
   display: flex;
+  align-items: center;
   padding: 12px 0;
   border-bottom: 1px solid #f1f3f5;
 }
@@ -527,20 +569,26 @@ footer small {
 
 .info-label {
   width: 120px;
-  color: #6c757d;
+  color: #000000;
   font-size: 14px;
 }
 
 .info-value {
   flex: 1;
-  color: #2c3e50;
+  color: #000000;
   font-size: 16px;
 }
 
 .info-value.highlight {
-  color: #28a745;
-  font-weight: 600;
-  font-size: 18px;
+  color: #ffffff;
+  background-color: #ff6b35;
+  font-weight: 800;
+  font-size: 22px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .detail-section {
@@ -549,13 +597,13 @@ footer small {
 
 .detail-section h3 {
   font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
   margin-bottom: 12px;
 }
 
 .detail-section p {
-  color: #495057;
+  color: #000000;
   line-height: 1.8;
   text-align: left;
 }
@@ -568,7 +616,7 @@ footer small {
 }
 
 .apply-button {
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   border: none;
   padding: 16px 48px;
@@ -580,7 +628,7 @@ footer small {
 }
 
 .apply-button:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 /* 応募フォーム */
@@ -591,7 +639,7 @@ footer small {
 
 .apply-subtitle {
   text-align: center;
-  color: #6c757d;
+  color: #000000;
   margin-bottom: 32px;
   font-size: 16px;
 }
@@ -611,7 +659,7 @@ footer small {
 .form-group label {
   display: block;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 8px;
   font-size: 14px;
 }
@@ -634,16 +682,16 @@ footer small {
   border-radius: 6px;
   transition: border-color 0.3s ease;
   font-family: inherit;
-  color: #2c3e50;
-  caret-color: #007bff;
+  color: #000000;
+  caret-color: #ff6b35;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .form-group input.error,
@@ -654,7 +702,7 @@ footer small {
 
 .readonly-input {
   background-color: #f8f9fa;
-  color: #6c757d;
+  color: #000000;
   cursor: not-allowed;
 }
 
@@ -694,7 +742,7 @@ footer small {
 }
 
 .submit-button {
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   border: none;
   padding: 16px 64px;
@@ -708,7 +756,7 @@ footer small {
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 .submit-button:active {
@@ -740,19 +788,19 @@ footer small {
 
 .success-message h3 {
   font-size: 24px;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 16px;
 }
 
 .success-message p {
-  color: #6c757d;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 32px;
 }
 
 .back-to-top-button {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   text-decoration: none;
   padding: 12px 32px;
@@ -762,7 +810,7 @@ footer small {
 }
 
 .back-to-top-button:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 /* 管理者ページ */
@@ -785,7 +833,7 @@ footer small {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
-  color: #6c757d;
+  color: #000000;
   cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
@@ -793,12 +841,12 @@ footer small {
 }
 
 .tab-btn:hover {
-  color: #007bff;
+  color: #ff6b35;
 }
 
 .tab-btn.active {
-  color: #007bff;
-  border-bottom-color: #007bff;
+  color: #ff6b35;
+  border-bottom-color: #ff6b35;
 }
 
 .tab-content {
@@ -827,7 +875,8 @@ footer small {
 .admin-header h2 {
   margin: 0;
   font-size: 28px;
-  color: #2c3e50;
+  font-weight: 400;
+  color: #000000;
 }
 
 .admin-actions {
@@ -867,7 +916,7 @@ footer small {
 
 .stats-container {
   background-color: #ffffff;
-  border: 2px solid #d0e3f0;
+  border: 2px solid #ffd4c0;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 32px;
@@ -882,14 +931,14 @@ footer small {
 
 .stat-label {
   font-size: 16px;
-  color: #6c757d;
+  color: #000000;
   font-weight: 500;
 }
 
 .stat-value {
   font-size: 32px;
   font-weight: 700;
-  color: #007bff;
+  color: #ff6b35;
 }
 
 /* ページネーション */
@@ -903,7 +952,7 @@ footer small {
 }
 
 .pagination-btn {
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   border: none;
   padding: 10px 24px;
@@ -915,7 +964,7 @@ footer small {
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 .pagination-btn:disabled {
@@ -926,7 +975,7 @@ footer small {
 
 .page-info {
   font-size: 16px;
-  color: #2c3e50;
+  color: #000000;
   font-weight: 600;
   min-width: 80px;
   text-align: center;
@@ -951,7 +1000,7 @@ footer small {
 .section-title {
   font-size: 22px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 24px;
   padding-bottom: 12px;
   border-bottom: 2px solid #e9ecef;
@@ -973,7 +1022,7 @@ footer small {
 .company-group-title {
   font-size: 20px;
   font-weight: 600;
-  color: #007bff;
+  color: #ff6b35;
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 2px solid #d0e3f0;
@@ -987,7 +1036,7 @@ footer small {
 
 .application-card {
   background-color: #ffffff;
-  border: 2px solid #d0e3f0;
+  border: 2px solid #ffd4c0;
   border-radius: 8px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1023,13 +1072,13 @@ footer small {
 .application-job-title {
   font-size: 20px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 6px;
 }
 
 .application-company {
   font-size: 14px;
-  color: #007bff;
+  color: #ff6b35;
   font-weight: 600;
 }
 
@@ -1039,7 +1088,7 @@ footer small {
 }
 
 .edit-btn {
-  background-color: #007bff;
+  background-color: #ff6b35;
   color: #ffffff;
   border: none;
   padding: 8px 16px;
@@ -1050,7 +1099,7 @@ footer small {
 }
 
 .edit-btn:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 .delete-btn {
@@ -1088,13 +1137,13 @@ footer small {
 
 .application-info-grid .info-label {
   font-size: 12px;
-  color: #6c757d;
+  color: #000000;
   font-weight: 500;
 }
 
 .application-info-grid .info-value {
   font-size: 15px;
-  color: #2c3e50;
+  color: #000000;
   font-weight: 500;
 }
 
@@ -1106,13 +1155,13 @@ footer small {
 .application-pr .info-label {
   display: block;
   font-size: 14px;
-  color: #6c757d;
+  color: #000000;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .pr-text {
-  color: #495057;
+  color: #000000;
   line-height: 1.8;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -1149,7 +1198,7 @@ footer small {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
 }
 
 .contact-checkbox {
@@ -1168,7 +1217,7 @@ footer small {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 8px;
 }
 
@@ -1179,17 +1228,17 @@ footer small {
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-family: inherit;
-  color: #2c3e50;
+  color: #000000;
   resize: vertical;
   min-height: 80px;
-  caret-color: #007bff;
+  caret-color: #ff6b35;
   transition: border-color 0.3s ease;
 }
 
 .contact-note:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .contact-note::placeholder {
@@ -1199,10 +1248,10 @@ footer small {
 .no-applications {
   text-align: center;
   padding: 64px 20px;
-  color: #6c757d;
+  color: #000000;
   font-size: 18px;
   background-color: #ffffff;
-  border: 2px solid #d0e3f0;
+  border: 2px solid #ffd4c0;
   border-radius: 8px;
 }
 
@@ -1257,7 +1306,7 @@ footer small {
 .modal-header h3 {
   font-size: 24px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin: 0;
 }
 
@@ -1265,7 +1314,7 @@ footer small {
   background: none;
   border: none;
   font-size: 32px;
-  color: #6c757d;
+  color: #000000;
   cursor: pointer;
   line-height: 1;
   padding: 0;
@@ -1278,7 +1327,7 @@ footer small {
 }
 
 .modal-close:hover {
-  color: #2c3e50;
+  color: #000000;
 }
 
 .edit-form {
@@ -1300,16 +1349,16 @@ footer small {
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-family: inherit;
-  color: #2c3e50;
-  caret-color: #007bff;
+  color: #000000;
+  caret-color: #ff6b35;
 }
 
 .edit-form input:focus,
 .edit-form select:focus,
 .edit-form textarea:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .edit-form textarea {
@@ -1352,7 +1401,7 @@ footer small {
 }
 
 .save-button:hover {
-  background-color: #0056b3;
+  background-color: #e55a2b;
 }
 
 /* レスポンシブデザイン */
@@ -1462,8 +1511,13 @@ footer small {
   }
   
   .job-salary {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px 14px;
+  }
+  
+  .no-experience-badge {
+    font-size: 11px;
+    padding: 5px 10px;
   }
   
   .job-location {
@@ -1604,7 +1658,8 @@ footer small {
   }
   
   .job-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     gap: 16px;
     margin-top: 24px;
   }
@@ -1683,6 +1738,7 @@ footer small {
   footer a {
     font-size: 12px;
     margin: 6px 0;
+    color: #000000;
   }
   
   footer small {
@@ -1731,7 +1787,8 @@ footer small {
   }
   
   .info-value.highlight {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 10px 16px;
   }
   
   .detail-section {

@@ -498,10 +498,31 @@ document.addEventListener('DOMContentLoaded', function() {
   if (jobId && jobDetails[jobId]) {
     const job = jobDetails[jobId];
     
+    // jobsデータからappeal情報を取得（未経験OK判定用）
+    const jobs = JSON.parse(localStorage.getItem('jobs') || '[]');
+    const jobData = jobs.find(j => j.id === parseInt(jobId));
+    const isNoExperienceOK = jobData && jobData.appeal && (
+      jobData.appeal.includes('未経験') || 
+      jobData.appeal.includes('初心者') || 
+      jobData.appeal.includes('未経験歓迎')
+    ) || (
+      job.requirements && (
+        job.requirements.includes('未経験') || 
+        job.requirements.includes('未経験可') ||
+        job.requirements.includes('未経験歓迎')
+      )
+    ) || (
+      job.description && (
+        job.description.includes('未経験') || 
+        job.description.includes('未経験者')
+      )
+    );
+    
     jobDetailContainer.innerHTML = `
       <div class="detail-header">
         <h2>${job.title}</h2>
         <span class="detail-type">${job.type}</span>
+        ${isNoExperienceOK ? '<span class="no-experience-badge-detail">未経験OK</span>' : ''}
       </div>
       
       <div class="detail-info">

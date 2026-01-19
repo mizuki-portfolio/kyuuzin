@@ -9,9 +9,9 @@ function applyCaretColor() {
     
     // setPropertyで!importantを設定（より強力）
     // 複数の方法で確実に適用
-    input.style.setProperty('caret-color', '#007bff', 'important');
-    input.style.setProperty('-webkit-caret-color', '#007bff', 'important'); // WebKit用
-    input.style.caretColor = '#007bff'; // 直接設定も追加
+    input.style.setProperty('caret-color', '#ff6b35', 'important');
+    input.style.setProperty('-webkit-caret-color', '#ff6b35', 'important'); // WebKit用
+    input.style.caretColor = '#ff6b35'; // 直接設定も追加
     
     // フォーカスイベントでも再適用（確実に適用）
     if (!input.hasAttribute('data-caret-focus-listener')) {
